@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 @Table(name = "user")
@@ -28,10 +29,10 @@ public class User {
     private String createdBy;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "createdDate")
+    @Column(name = "created_date")
     @NotNull
     @NotEmpty
-    private String createdDate;
+    private Date createdDate;
 
     @Column(name = "updated_by")
     private String updatedBy;
@@ -40,12 +41,12 @@ public class User {
     @Column(name = "updated_date")
     @NotNull
     @NotEmpty
-    private String updatedDate;
+    private Date updatedDate;
 
     public User() {
     }
 
-    public User(String id, String name, String username, String password, String createdBy, String createdDate, String updatedBy, String updatedDate) {
+    public User(String id, String name, String username, String password, String createdBy, Date createdDate, String updatedBy, Date updatedDate) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -96,11 +97,11 @@ public class User {
         this.createdBy = createdBy;
     }
 
-    public String getCreatedDate() {
+    public Date getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(String createdDate) {
+    public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -112,11 +113,11 @@ public class User {
         this.updatedBy = updatedBy;
     }
 
-    public String getUpdatedDate() {
+    public Date getUpdatedDate() {
         return updatedDate;
     }
 
-    public void setUpdatedDate(String updatedDate) {
+    public void setUpdatedDate(Date updatedDate) {
         this.updatedDate = updatedDate;
     }
 
